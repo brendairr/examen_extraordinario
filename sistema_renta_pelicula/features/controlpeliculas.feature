@@ -12,7 +12,7 @@ Feature: Agregar peliculas
 		Dado que presiono el boton Nueva
 		Cuando recibo los siguientes datos
 		|id|titulo|sinopsis|clasificacion|duracion|genero|estreno|actores|estatus|
-		|3|Mechanic: Resurrection|Mechanic: Resurrection es una película franco-americana de suspenso y acción dirigida por Dennis Gansel. La película estará protagonizada por Jason Statham, Jessica Alba, Tommy Lee Jones y Michelle Ye|B|98 minutos|Acción|True|Jason Statham|1|
+		|10|prueba_v1000|prueba de escenarios eliminar, editar|A|8 minutos|Infantil|False|Brandon Hall|1|
 		Entonces puedo ver la pelicula en la lista
 
 	Scenario: Ver lista de peliculas
@@ -23,5 +23,17 @@ Feature: Agregar peliculas
 	Scenario: Eliminar peliculas
 		Dado que quiero ver la lista de peliculas de mi catalogo
 		Cuando consulto la lista de peliculas
-		Entonces puedo eliminar, editar o quitar el estatus de rentada a una pelicula
+		Entonces puedo eliminar una pelicula rentada
+
+	Scenario: Editar peliculas
+		Dado que quiero editar una pelicula de la lista
+		Cuando visualizo la pagina de edicion
+		Entonces puedo editar la duracion de la pelicula
+		|id|titulo|sinopsis|clasificacion|duracion|genero|estreno|actores|estatus|
+		|1|prueba|examen testing|C|3 dias|Terror|True|Alejandro Mauricio González|0|
+
+    Scenario: Cambiar status de peliculas
+		Dado que quiero ver la lista de peliculas de mi catalogo
+		Cuando consulto la lista de peliculas
+		Entonces puedo quitar el estatus de rentada a una pelicula
 
