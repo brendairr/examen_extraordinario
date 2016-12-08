@@ -1,0 +1,62 @@
+{% block contenido %}
+
+<div class="row">
+    <div class="col-md-10">
+        <h1>Catálogo de Películas</h1>
+    </div>
+    <div class="col-md-2">
+        <a class="btn btn-primary btn-lg " name="nueva" href="{% url "nueva_pelicula" %}">
+        <i class="icon_plus_alt2"></i> Nueva</a>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped" name="tabla">
+        <tr>
+            <th>Titulo</th>
+            <th>Sinopsis</th>
+            <th>Clasificacion</th>
+            <th>Duracion</th>
+            <th>Estreno</th>
+            <th>Genero</th>
+            <th>Actores</th>
+            <th>Estatus</th>
+            <th>Herramientas</th>
+
+        </tr>
+
+            {% for pelicula in peliculas %}
+        <tr>
+                <td>{{pelicula.titulo}}</td>
+                <td>{{pelicula.sinopsis}}</td>
+                <td>{{pelicula.clasificacion}}</td>
+                <td>{{pelicula.duracion}}</td>
+                <td>{{pelicula.estreno}}</td>
+                <td>{{pelicula.genero}}</td>
+                <td>{{pelicula.actor}}</td>
+                <td>{% if pelicula.status == 0 %}
+                        No Rentada
+                    {% elif pelicula.status == 1 %}
+                        Rentada
+                    {% endif %}</td>
+
+             <td>
+                <div class="btn-group">
+                    <a class="btn btn-success" name="editar" href="#" onclick="window.location='{% url "editar_pelicula" pk=pelicula.id %}'">
+                        <i class="icon_check_alt2"></i>Editar
+                    </a>
+                    <a class="btn btn-danger" name="eliminar" href="#" onclick="window.location='{% url "eliminar_pelicula" pk=pelicula.id %}'">
+                        <i class="icon_close_alt2"></i>Eliminar
+                    </a>
+                    <a class="btn btn-success" name="renta" href="#" onclick="window.location='{% url "rentar_pelicula" pk=pelicula.id %}'">
+                        <i class="icon_check_alt2"></i>Rentar
+                    </a>
+                </div>
+            </td>
+     </tr>
+        {% endfor %}
+
+    </table>
+    </div>
+
+
+{% endblock %}
