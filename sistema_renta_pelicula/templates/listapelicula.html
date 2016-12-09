@@ -4,10 +4,6 @@
     <div class="col-md-10">
         <h1>Catálogo de Películas</h1>
     </div>
-    <div class="col-md-2">
-        <a class="btn btn-primary btn-lg " name="nueva" href="{% url "nueva_pelicula" %}">
-        <i class="icon_plus_alt2"></i> Nueva</a>
-    </div>
 </div>
 <div class="table-responsive">
     <table class="table table-striped" name="tabla">
@@ -47,16 +43,23 @@
                     <a class="btn btn-danger" name="eliminar" href="#" onclick="window.location='{% url "eliminar_pelicula" pk=pelicula.id %}'">
                         <i class="icon_close_alt2"></i>Eliminar
                     </a>
-                    <a class="btn btn-success" name="renta" href="#" onclick="window.location='{% url "rentar_pelicula" pk=pelicula.id %}'">
-                        <i class="icon_check_alt2"></i>Rentar
-                    </a>
                 </div>
             </td>
      </tr>
         {% endfor %}
 
     </table>
+
+    <div class="btn-agregar-pelicula">
+        <a class="btn btn-primary btn-lg " name="nueva" href="{% url "nueva_pelicula" %}">
+        <i class="icon_plus_alt2"></i> Agregar Película</a>
     </div>
+
+    <div class="btn-agregar-renta">
+        <a class="btn btn-primary btn-lg " name="rentar" href="{% url "rentar_pelicula" %}">
+        <i class="icon_plus_alt2"></i> Agregar Renta</a>
+    </div>
+</div>
 
 
 {% endblock %}

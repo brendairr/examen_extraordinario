@@ -46,7 +46,7 @@ class Pelicula(models.Model):
 
 
 class RentaPelicula(models.Model):
-    fecha_renta = models.DateTimeField(u'Fecha Renta', auto_now=False, auto_now_add=True)
+    fecha_renta = models.DateTimeField(u'Fecha Renta')
     usuario = models.ForeignKey(User, default=None)
     pelicula = models.ForeignKey(Pelicula, default=None)
     fecha_entrega = models.DateTimeField(u'Fecha Entrega')

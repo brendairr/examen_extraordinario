@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^nueva/$', nueva_pelicula, name="nueva_pelicula"),
     url(r'^(?P<pk>[0-9]+)/editar/$', editar_pelicula, name="editar_pelicula"),
     url(r'^(?P<pk>[0-9]+)/eliminar/$', eliminar_pelicula, name="eliminar_pelicula"),
-    url(r'^(?P<pk>[0-9]+)/rentar/$', rentar_pelicula, name="rentar_pelicula"),
+    url(r'^rentar/$', rentar_pelicula, name="rentar_pelicula"),
+
 ]

@@ -1,8 +1,4 @@
-{% extends 'base.html' %}
-
-
-{% block titulo %}
-    {{funcion}} Pelicula
+    {{funcion}} Renta Película
 {% endblock %}
 
 {% block contenido %}
@@ -10,7 +6,7 @@
     <div class="row">
   		<div class="col-md-6">
 
-			<h1>{{funcion}} Película</h1>
+			<h1>{{funcion}} Renta Película</h1>
                 <form action="" method="POST">
 
                     {% for field in form.visible_fields %}
@@ -25,7 +21,7 @@
                     {% csrf_token %}
 
                 <button type="submit"  name="enviarPelicula" class="btn btn-primary btn-lg">{{funcion}}
-                Película</button>
+                Renta Película</button>
 
                 </form>
 		</div>
